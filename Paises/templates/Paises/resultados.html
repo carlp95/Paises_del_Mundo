@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'L4/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Paises/style.css' %}" />
 
 <h1>{{ pais.Nombre }}</h1>
 
@@ -13,4 +13,4 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'L4:detail' pais.id %}"> Mostrar Pais Otra Vez?</a>	
+<a href="{% url 'Paises:detail' pais.id %}"> Mostrar Pais Otra Vez?</a>
