@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'L4/style.css' %}" />
+
+<h1>{{ pais.Nombre }}</h1>
+
+<ul>
+{% for idioma in pais.lenguaje_set.all %}
+<li>Lenguaje: {{idioma.Lenguaje}}</li>
+{% endfor %}
+{% for ciudad in pais.ciudad_set.all %}
+	<li>{{ciudad.Nombre_Ciudad}} -- Distrito: {{ciudad.Distrito}} -- Poblacion: {{ciudad.Poblacion}}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'L4:detail' pais.id %}"> Mostrar Pais Otra Vez?</a>	

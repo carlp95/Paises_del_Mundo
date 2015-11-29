@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'L4/style.css' %}" />
+
+<h1>Paises del mundo</h1>
+
+{% if Agregado_Reciente %}
+	<ul>
+	{% for pais in Agregado_Reciente %}
+		<li><a href = "{% url 'L4:detail' pais.id %}">{{pais.Nombre}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+		<p>No hay paises.</p>
+{% endif %}

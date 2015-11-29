@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'L4/style.css' %}" />
+
+<h1>{{pais.Nombre}}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action = "{% url 'L4:ciudades' pais.id %}" method = "post">
+{% csrf_token %}
+{% for ciudad in pais.ciudad_set.all %}
+	<input type = "radio" name = "ciudad" id = "ciudad{{forloop.counter}}" value="{{ciudad.id}}" />
+	<label for="ciudad{{forloop.counter}}">{{ciudad.Nombre_Ciudad}}</label><br />
+{% endfor %}
+<input type = "submit" value = "Chequear Ciudad" />
+</form>	

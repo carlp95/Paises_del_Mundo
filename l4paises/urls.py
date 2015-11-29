@@ -17,5 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^L4/' , include('L4.urls', namespace = "L4")),
     url(r'^admin/', include(admin.site.urls)),
 ]
